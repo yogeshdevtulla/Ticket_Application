@@ -1,0 +1,192 @@
+﻿@model ADO_Example.Models.DashboardViewModel
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .dashboard-header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .card {
+            text-align: center;
+        }
+
+        .chart-container {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 40%;
+            margin-right:100px;
+
+
+
+        }
+
+        #pieChart, #barGraph {
+            max-width: 100%;
+            max-height: 300px;
+        }
+
+        .cards-container .card {
+            margin: 10px 0; /* Optional margin for better spacing */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+
+
+        <!-- Cards Row -->
+        <div class="row cards-container">
+            <!-- Open Tickets Card -->
+            <div class="col-md-3">
+                <div id="openTicketsCard" class="card text-white bg-primary">
+                    <div class="card-header">Open Tickets</div>
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.OpenTickets</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resolved Tickets Card -->
+            <div class="col-md-3">
+                <div class="card text-white bg-warning">
+                    <div class="card-header">Resolved Tickets</div>
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.ResolvedTickets</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Closed Tickets Card -->
+            <div class="col-md-3">
+                <div class="card text-white bg-success">
+                    <div class="card-header">Closed Tickets</div>
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.ClosedTickets</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Users Card -->
+            <div class="col-md-3">
+                <div class="card text-white bg-info">
+                    <div class="card-header">Total Users</div>
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.TotalUsers</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="row mt-5" style="display: flex; margin-left: 49px; margin-bottom:60px;">
+
+            <!-- Pie Chart -->
+            <div class="col-md-6 chart-container">
+                <h4 class="text-center">Tickets by Department</h4>
+                <canvas id="pieChart"></canvas>
+            </div>
+
+            <!-- Bar Graph -->
+            <div class="col-md-6 chart-container">
+                <h4 class="text-center">Ticket Status</h4>
+                <canvas id="barGraph"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Chart -->
+    <div class="modal fade" id="openTicketsModal" tabindex="-1" role="dialog" aria-labelledby="openTicketsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content shadow-lg">
+                <!-- Modal Header -->
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="openTicketsModalLabel">
+                        <i class="bi bi-ticket-detailed"></i> Open Tickets
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <p class="text-muted mb-3">
+                        Below is the list of all currently open tickets. Click on a ticket for more details.
+                    </p>
+                    <ul id="openTicketsList" class="list-group">
+                    </ul>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer justify-content-between bg-light">
+                    <p class="text-muted small mb-0">* Refresh the page to see updated ticket status.</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="viewTicketModal" tabindex="-1" role="dialog" aria-labelledby="viewTicketModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document" style="margin-left: 29%;">
+            <div class="modal-content" style="height: 50vh;">
+                <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title" id="viewTicketModalLabel">View Ticket</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body" style="margin: 20px 100px;">
+                    <div class="row">
+                        <!-- Assigned User -->
+                        <div class="col-md-12 mb-3">
+                            @*<h6 class="text-white bg-primary p-2 rounded">
+                                    This ticket is assigned to user <span id="assignedUser">OJAS05-VIJAY SHUKLA</span>
+                                </h6>*@
+                        </div>
+
+                        <!-- Ticket Details -->
+                        <div class="col-md-6">
+                            <p><strong>Ticket No:</strong> <span id="modalTicketNo"></span></p>
+                            <p><strong>Ticket Date:</strong> <span id="modalTicketDate"></span></p>
+                            <p><strong>Department:</strong> <span id="modalDepartment"></span></p>
+                            <p><strong>Help list:</strong> <span id="modalCategory"></span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Issued By:</strong> <span id="modalIssuedBy"></span></p>
+                            <p><strong>Issue Related To:</strong> <span id="modalSubCategory"></span></p>
+                            <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+                            <p><strong>Feedback/Comments:</strong> <span id="modalFeedback"></span></p>
+                        </div>
+
+                        <!-- Feedback -->
+                        @*<div class="col-md-12">
+                                <p><strong>Feedback/Comments:</strong> <span id="modalFeedback"></span></p>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/CustomJS/dashboard.js"></script>
+
+
+
+</body>
+</html>

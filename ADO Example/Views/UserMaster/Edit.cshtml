@@ -1,0 +1,164 @@
+﻿@model ADO_Example.Models.UserMaster
+
+@{
+    ViewBag.Title = "Edit User";
+}
+
+<h2 class="text-center mb-4">Edit User</h2>
+
+<div class="card shadow-lg mx-auto" style="max-width: 800px;">
+    <div class="card-body p-4">
+        <form action="@Url.Action("Edit", "UserMaster")" method="post" id="editUserForm" class="container">
+            <input type="hidden" name="UserID" value="@Model.UserID" />
+
+            <!-- First Name, Middle Name, Last Name -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="FirstName" class="form-label">First Name</label>
+                    <input type="text"
+                           id="FirstName"
+                           name="FirstName"
+                           value="@Model.FirstName"
+                           class="form-control"
+                           placeholder="Enter First Name" />
+                </div>
+                <div class="col-md-4">
+                    <label for="MiddleName" class="form-label">Middle Name</label>
+                    <input type="text"
+                           id="MiddleName"
+                           name="MiddleName"
+                           value="@Model.MiddleName"
+                           class="form-control"
+                           placeholder="Enter Middle Name" />
+                </div>
+                <div class="col-md-4">
+                    <label for="LastName" class="form-label">Last Name</label>
+                    <input type="text"
+                           id="LastName"
+                           name="LastName"
+                           value="@Model.LastName"
+                           class="form-control"
+                           placeholder="Enter Last Name" />
+                </div>
+            </div>
+
+            <!-- Password and Confirm Password -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="Password" class="form-label">Password</label>
+                    <input type="password"
+                           id="Password"
+                           name="Password"
+                           value="@Model.Password"
+                           class="form-control"
+                           placeholder="Enter Password" />
+                </div>
+                <div class="col-md-6">
+                    <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password"
+                           id="ConfirmPassword"
+                           name="ConfirmPassword"
+                           class="form-control"
+                           placeholder="Confirm Password" />
+                </div>
+            </div>
+            @*@//role@*@
+
+            <div class="form-group">
+                <label for="Role">Role</label>
+                <input type="text" id="Role" name="Role" value="@Model.Role" class="form-control" />
+            </div>
+
+            <!-- Department and Designation -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="DepartmentID" class="form-label">Department</label>
+                    <select id="DepartmentID" name="DepartmentID" class="form-select">
+                        <option value="">--Select--</option>
+                        @foreach (var department in (SelectList)ViewBag.Departments)
+                        {
+                            <option value="@department.Value"
+                                    @(department.Value == Model.DepartmentID.ToString() ? "selected" : "")>
+                                @department.Text
+                            </option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="Designation" class="form-label">Designation</label>
+                    <input type="text"
+                           id="Designation"
+                           name="Designation"
+                           value="@Model.Designation"
+                           class="form-control"
+                           placeholder="Enter Designation" />
+                </div>
+            </div>
+
+            <!-- Mobile No and Email -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="MobileNo" class="form-label">Mobile No</label>
+                    <input type="text"
+                           id="MobileNo"
+                           name="MobileNo"
+                           value="@Model.MobileNo"
+                           class="form-control"
+                           placeholder="Enter Mobile Number" />
+                </div>
+                <div class="col-md-6">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="email"
+                           id="Email"
+                           name="Email"
+                           value="@Model.Email"
+                           class="form-control"
+                           placeholder="Enter Email Address" />
+                </div>
+            </div>
+
+            <!-- Status -->
+            <div class="row mb-3">
+                <label class="form-label">Status</label>
+                <div class="col-md-12">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               type="radio"
+                               name="Status"
+                               id="Active"
+                               value="Active"
+                               @(Model.Status == "Active" ? "checked" : "") />
+                        <label class="form-check-label" for="Active">Active</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               type="radio"
+                               name="Status"
+                               id="Inactive"
+                               value="Inactive"
+                               @(Model.Status == "Inactive" ? "checked" : "") />
+                        <label class="form-check-label" for="Inactive">Inactive</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="row mt-4">
+                <div class="col-md-12 text-start">
+                    <button type="submit" class="btn btn-primary me-2">
+                        <i class="fas fa-save"></i> Submit
+                    </button>
+                    <button type="reset" class="btn btn-secondary me-2">
+                        <i class="fas fa-undo"></i> Reset
+                    </button>
+                    <a href="@Url.Action("Index", "UserMaster")" class="btn btn-danger">
+                        <i class="fas fa-times"></i> Cancel
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Include FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

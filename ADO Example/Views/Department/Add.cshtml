@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Add Department";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Add Department</h2>
+
+    <form id="add-department-form">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="departmentName" class="form-label">Department Name</label>
+                <input type="text" id="departmentName" class="form-control" placeholder="Enter Department Name" required />
+            </div>
+            <div class="col-md-6">
+                <label for="status" class="form-label">Status</label><br />
+                <input type="radio" id="active" name="status" value="Active" checked /> Active
+                <input type="radio" id="inactive" name="status" value="Inactive" /> Inactive
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-2">Submit</button>
+            <button type="reset" class="btn btn-secondary me-2">Reset</button>
+            <button type="button" id="cancel-btn" class="btn btn-danger">Cancel</button>
+        </div>
+    </form>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="~/Scripts/CustomJS/department.js"></script>

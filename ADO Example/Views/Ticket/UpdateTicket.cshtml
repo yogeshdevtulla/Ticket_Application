@@ -1,0 +1,71 @@
+﻿@model ADO_Example.Models.TicketUpdateModel
+
+<div class="card" style="width: 60%; margin: auto;">
+    <div class="card-header">
+        <h5 class="card-title">Update Ticket</h5>
+    </div>
+
+    <div class="card-body">
+        <!-- Form inside the card body -->
+        <form id="updateTicketForm" method="post" action="@Url.Action("UpdateTicket", "Ticket")">
+            <input type="hidden" name="ticketNo" value="@Model.TicketNo" />
+
+            <!-- Ticket No & Created Date: Side by side -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Ticket No:</strong> @Model.TicketNo
+                </div>
+                <div class="col-md-6">
+                    <strong>Created Date:</strong> @Model.CreateDate
+                </div>
+            </div>
+
+            <!-- Department -->
+            <div class="mb-3">
+                <strong>Department:</strong> @Model.DepartmentName
+            </div>
+
+            <!-- Category & Sub-Category: Side by side -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Category:</strong> @Model.CategoryName
+                </div>
+                <div class="col-md-6">
+                    <strong>Sub-Category:</strong> @Model.SubCategoryName
+                </div>
+            </div>
+
+            <!-- Status & Feedback -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Status:</strong> @Model.Status
+                </div>
+                <div class="col-md-6">
+                    <strong>Feedback:</strong> @Model.Feedback
+                </div>
+            </div>
+
+            <!-- Action (Radio buttons for Resolved or Closed) -->
+            <div class="mb-3">
+                <label for="action">Action:</label>
+                <div>
+                    <input type="radio" id="resolved" name="action" value="Resolved" /> Resolved
+                    <input type="radio" id="closed" name="action" value="Closed" /> Closed
+                </div>
+            </div>
+
+            <!-- Remarks -->
+            <div class="mb-3">
+                <label for="remarks">Remarks:</label>
+                <textarea id="remarks" name="remarks" class="form-control" rows="3"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- Add Bootstrap JS and CSS for Modal (if required) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,46 @@
+﻿@model ADO_Example.Models.DepartmentEditViewModel
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Edit Department</h2>
+
+    <form id="edit-form" method="post">
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" id="department-id" name="Id" value="@Model.Id" />
+
+        <!-- Department Name Dropdown -->
+        <div class="mb-3">
+            <label for="department-name" class="form-label">Department Name</label>
+            @Html.TextBoxFor(model => model.DepartmentName, new { @class = "form-control" })
+            @*<input type="text" id="department-name" name="DepartmentName" class="form-control" required />*@
+            @*<select id="department-name" name="DepartmentName" class="form-select" required>
+            @foreach (var dept in Model.DepartmentList)
+            {
+                <option value="@dept.DepartmentName" @(dept.DepartmentName == Model.DepartmentName ? "selected" : "")>@dept.DepartmentName</option>
+            }
+        </select>*@
+        </div>
+
+        <!-- Status Radio Buttons -->
+        <div class="mb-3">
+            <label class="form-label">Status</label>
+            <div class="form-check">
+                <input type="radio" id="status-active" name="Status" value="Active" class="form-check-input" required @(Model.Status == "Active" ? "checked" : "") />
+                <label for="status-active" class="form-check-label">Active</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="status-inactive" name="Status" value="Inactive" class="form-check-input" @(Model.Status == "Inactive" ? "checked" : "") />
+                <label for="status-inactive" class="form-check-label">Inactive</label>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-2">Submit</button>
+            <button type="reset" class="btn btn-secondary me-2">Reset</button>
+            <button type="button" id="dcancel-btn" class="btn btn-danger">Cancel</button>
+        </div>
+        
+    </form>
+</div>

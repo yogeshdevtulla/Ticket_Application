@@ -1,0 +1,32 @@
+﻿@model ADO_Example.Models.Ticket
+
+@{
+    ViewBag.Title = "Add Ticket";
+}
+
+<h2>Add Ticket</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Department</label>
+        @Html.DropDownListFor(m => m.DepartmentID, new SelectList(ViewBag.Departments, "DepartmentID", "DepartmentName"), "Select Department")
+    </div>
+    <div>
+        <label>Category</label>
+        @Html.DropDownListFor(m => m.CategoryID, new SelectList(ViewBag.Categories, "CategoryID", "CategoryName"), "Select Category")
+    </div>
+    <div>
+        <label>SubCategory</label>
+        @Html.DropDownListFor(m => m.SubCategoryID, new SelectList(ViewBag.SubCategories, "SubCategoryID", "SubCategoryName"), "Select SubCategory")
+    </div>
+    <div>
+        <label>Priority</label>
+        @Html.DropDownListFor(m => m.Priority, new SelectList(ViewBag.Priorities), "Select Priority")
+    </div>
+    <div>
+        <label>Feedback</label>
+        @Html.TextAreaFor(m => m.Feedback)
+    </div>
+    <button type="submit">Submit</button>
+}

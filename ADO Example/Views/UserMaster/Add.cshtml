@@ -1,0 +1,146 @@
+﻿@model ADO_Example.Models.UserMaster
+@{
+    ViewBag.Title = "Add New User";
+}
+
+<h2>Add New User</h2>
+
+<div class="add-user-form">
+    <form id="addUserForm" method="post">
+        <div class="form-container">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="FirstName" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" id="middleName" name="MiddleName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="LastName" class="form-control" required />
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="role">Role</label>
+
+                    @*<input type="role" id="role" name="role" class="form-control" required />*@
+                <select id="role" name="Role" class="form-control" required>
+                    <option value="">-- Select Role --</option>
+                    @foreach (var rol in ViewBag.Role as SelectList)
+                    {
+                        <option value="@rol.Value">@rol.Text</option>
+                    }
+                </select>
+                    @*<select id="role" name="Role" class="form-control" required>
+
+            <option value="" disabled selected>--Select--</option>
+             Add  roles dynamically here
+        </select>*@
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="Email" class="form-control" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="Password" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="ConfirmPassword" class="form-control" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" name="DepartmentID" class="form-control" required>
+                        <option value="">-- Select Department --</option>
+                        @foreach (var dept in ViewBag.Departments as SelectList)
+                        {
+                            <option value="@dept.Value">@dept.Text</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="designation">Designation</label>
+                    <input type="text" id="designation" name="Designation" class="form-control" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="mobileNo">Mobile No</label>
+                    <input type="text" id="mobileNo" name="MobileNo" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <div>
+                        <label><input type="radio" name="Status" value="Active" checked /> Active</label>
+                        <label><input type="radio" name="Status" value="Inactive" /> Inactive</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-warning">Reset</button>
+                <a href="@Url.Action("Index", "UserMaster")" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .add-user-form {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+    .form-control {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        margin: 5px;
+    }
+</style>

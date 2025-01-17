@@ -1,0 +1,76 @@
+﻿@model ADO_Example.Models.Product
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card bg-dark text-light p-4 shadow-lg w-50" style="border-radius: 20px;">
+        <h2 class="text-center mb-4">Add New Products</h2>
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                <strong> Error ! :</strong> @TempData["ErrorMessage"]
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+            </div>
+
+
+        }
+        
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal text-center">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group mb-4">
+                    @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "form-label d-block" })
+                    <div class="d-flex justify-content-center">
+                        @Html.EditorFor(model => model.ProductName, new
+                            { htmlAttributes = new { @class = "form-control border-0 border-bottom rounded-0 bg-transparent text-light w-75 text-center", @style = "box-shadow: none;" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mb-4">
+                    @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "form-label d-block" })
+                    <div class="d-flex justify-content-center">
+                        @Html.EditorFor(model => model.Price, new
+                            { htmlAttributes = new { @class = "form-control border-0 border-bottom rounded-0 bg-transparent text-light w-75 text-center", @style = "box-shadow: none;" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mb-4">
+                    @Html.LabelFor(model => model.Qty, htmlAttributes: new { @class = "form-label d-block" })
+                    <div class="d-flex justify-content-center">
+                        @Html.EditorFor(model => model.Qty, new
+                            { htmlAttributes = new { @class = "form-control border-0 border-bottom rounded-0 bg-transparent text-light w-75 text-center", @style = "box-shadow: none;" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Qty, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mb-4">
+                    @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "form-label d-block" })
+                    <div class="d-flex justify-content-center">
+                        @Html.EditorFor(model => model.Remarks, new
+                            { htmlAttributes = new { @class = "form-control border-0 border-bottom rounded-0 bg-transparent text-light w-75 text-center", @style = "box-shadow: none;" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <input type="submit" value="Create" class="btn btn-primary px-5" />
+                </div>
+            </div>
+        }
+
+        <div class="text-center mt-3">
+            @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-link text-light" })
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+hey my code structure is that 
+ADO Example
+controller
+DepartmentController.cs
+HomeController.cs
+LoginController.cs
+ProductController.cs
+
+Data
+Department_Data.cs
+Product_Data.cs
+UserRepository.cs
+
+Model
+Department.cs
+Product.cs
+User.cs
+
+Script
+/CustomJs
+AutoHideAlert.js
+department.js
+
+Views
+/Department
+Add.cshtml
+Edit.Cshtml
+Index.cshtml
+/Home
+/Login
+/Product
+/Shared
+
+web.config
+
+
+
+the database structure
+Master(database)
+table/dbo.Department
+programmability/Stored procedure/
+dbo.DeleteDepartment
+dbo.GetAllDepartment
+dbo.InserDepartment
+dbo.UpdateDepartment
+
+
+
+i want to create the page for catagory
+here in this page ill bw having a top button "Add Item"
+next it will be having grid with 4 columns
+CatagoryName DepartmentName Staus Action
+
+the department name is going to fetch from the department table inside master database
+the action coulmn will show 2 icon that is edit and delete button
+
+user ado.net mvc stored procedure and jquary ajax call c# to create this 
+
+

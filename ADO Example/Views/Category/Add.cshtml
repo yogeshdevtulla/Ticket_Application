@@ -1,0 +1,58 @@
+﻿@*@model ADO_Example.Models.DepartmentEditViewModel
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>*@
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Add Category</h2>
+
+    <form id="add-category-form">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="categoryName" class="form-label">Category Name</label>
+                <input type="text" id="categoryName" class="form-control" placeholder="Enter Category Name" required />
+            </div>
+            <div class="col-md-6">
+                <label for="departmentName" class="form-label">Department Name</label>
+                @*<input type="text" id="departmentName" class="form-control" placeholder="Enter Department Name" required />*@
+                <select id="departmentName" class="form-control" name="departmentName" required>
+                    <option value="">-- Select Department --</option>
+                    @foreach (var department in ViewBag.departments as List<ADO_Example.Models.DepartmentModel>)
+                    {
+                        <option value="@department.Id">@department.DepartmentName</option>
+                    }
+                </select>
+
+                @*<select id="departmentName" name="DepartmentName" class="form-select" required>
+                    @foreach (var dept in Model.DepartmentList)
+                    {
+                        <option value="@dept.DepartmentName" @(dept.DepartmentName == Model.DepartmentName ? "selected" : "")>@dept.DepartmentName</option>
+                    }
+                </select>*@
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="status" class="form-label">Status</label><br />
+                <input type="radio" id="active" name="status" value="Active" checked /> Active
+                <input type="radio" id="inactive" name="status" value="Inactive" /> Inactive
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-2">Submit</button>
+            <button type="reset" class="btn btn-secondary me-2">Reset</button>
+            <button type="button" id="cancel-btn" class="btn btn-danger">Cancel</button>
+        </div>
+    </form>
+
+    <div id="response-message" class="mt-3 text-center"></div>
+</div>
+
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="~/Scripts/CustomJS/category.js"></script>

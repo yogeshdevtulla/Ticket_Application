@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Yogesh Devtulla Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/CustomCSS/style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .rotate-icon {
+            transition: transform 0.3s ease;
+        }
+
+        [data-bs-toggle="collapse"][aria-expanded="true"] .rotate-icon {
+            transform: rotate(90deg); /* Rotates the play button to face downward */
+        }
+    </style>
+</head>
+
+
+
+<body class="d-flex flex-column vh-100">
+    <!-- Sidebar Navigation -->
+    <nav class="navbar navbar-dark bg-dark flex-column" id="sidebar" style="position: fixed; top: 0; left: 0; height: 100vh; width: 250px;overflow-y: auto; ">
+        <div class="text-center py-3">
+            <a href="@Url.Action("Index", "Home")" class="navbar-brand text-white">
+                <i class="bi bi-ticket-perforated"></i> Ticket App
+            </a>
+
+        </div>
+        <ul class="navbar-nav flex-column w-100">
+            <!-- Menu Items -->
+
+
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Home")" class="nav-link text-white d-flex align-items-center">
+                    <i class="bi bi-house-door me-2"></i> Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Product")" class="nav-link text-white d-flex align-items-center">
+                    <i class="bi bi-cart3 me-2"></i> Product
+                </a>
+            </li>
+            <li class="nav-item">
+                @*<a href="#" class="nav-link text-white d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#masterSubMenu" aria-expanded="false">
+                        <i class="bi bi-folder me-2"></i> Master <i class="bi bi-caret-left float-end"></i>
+                    </a>*@
+                <a href="#" class="nav-link text-white d-flex align-items-center justify-content-between" data-bs-toggle="collapse" data-bs-target="#masterSubMenu" aria-expanded="false">
+                    <span><i class="bi bi-folder me-2"></i> Master</span>
+                    <i class="bi bi-play-fill rotate-icon transform: rotate(180deg)"></i>
+                </a>
+
+
+                <ul id="masterSubMenu" class="collapse list-unstyled ms-3">
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Department")" class="nav-link text-white">Department</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Category")" class="nav-link text-white">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Subcategory")" class="nav-link text-white">Subcategory</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-white d-flex align-items-center justify-content-between" data-bs-toggle="collapse" data-bs-target="#userSubMenu" aria-expanded="false">
+                    <span><i class="bi bi-person me-2"></i> User</span>
+                    <i class="bi bi-play-fill rotate-icon transform: rotate(180deg)"></i>
+                </a>
+                <ul id="userSubMenu" class="collapse list-unstyled ms-3">
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Changepassword")" class="nav-link text-white">Change Password</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Usermaster")" class="nav-link text-white">User Master</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Rolemaster")" class="nav-link text-white">Role Master</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link text-white d-flex align-items-center justify-content-between" data-bs-toggle="collapse" data-bs-target="#ticketSubMenu" aria-expanded="false">
+                    <span><i class="bi bi-ticket me-2"></i> Ticket</span>
+                    <i class="bi bi-play-fill rotate-icon transform: rotate(180deg)"></i>
+                </a>
+                <ul id="ticketSubMenu" class="collapse list-unstyled ms-3">
+                    <li class="nav-item">
+                        <a href="@Url.Action("AddTicket", "Ticket")" class="nav-link text-white">Add Ticket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Ticket")" class="nav-link text-white">Track Ticket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("UpdateTicket", "Ticket")" class="nav-link text-white">Update/Close Ticket</a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="nav-item">
+                <a href="#" class="nav-link text-white d-flex align-items-center justify-content-between" data-bs-toggle="collapse" data-bs-target="#reportSubMenu" aria-expanded="false">
+                    @*<i class="bi bi-bar-chart me-2"></i> Report*@
+                    <span>
+                        <i class="bi bi-info-circle me-2"></i> Report
+                    </span>
+                    <i class="bi bi-play-fill rotate-icon transform: rotate(180deg)"></i>
+                </a>
+                <ul id="reportSubMenu" class="collapse list-unstyled ms-3">
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "TATReport")" class="nav-link text-white"> TAT Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "Ticket")" class="nav-link text-white">Detail Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("UpdateTicket", "Ticket")" class="nav-link text-white">Agent Status</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="flex-grow-1 d-flex flex-column" style="margin-left: 250px;">
+        <!-- Header -->
+        <header class="bg-light p-3 border-bottom d-flex align-items-center justify-content-between" style="background: linear-gradient(90deg, #4facfe, #00f2fe)">
+            @*<img src="~/Image/yogesh.gif" alt="Profile Icon" class="rounded-circle" width="40" height="40" />*@
+
+            <h1 class="m-0">Yogesh Devtulla</h1>
+            
+            <a href="/Login/Logout" class="btn btn-sm">
+                <img src="~/Image/yogesh.gif" alt="Profile Icon" class="rounded-circle" width="40" height="40" />
+            </a>
+            
+
+            @*<img src="~/Image/oops.png" alt="Profile Icon" class="rounded-circle" width="40" height="40" />*@
+        </header>
+
+        <!-- Body Content -->
+        <div class="container flex-grow-1 mt-3">
+            @RenderBody()
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-light text-center text-muted py-3 border-top">
+            <p>&copy; @DateTime.Now.Year - Application by Yogesh Devtulla</p>
+        </footer>
+    </div>
+
+    @*<script src="~/Scripts/CustomJS/AutoHideAlert.js"></script>*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

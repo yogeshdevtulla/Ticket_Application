@@ -1,0 +1,165 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|c:\\users\\administrator\\desktop\\finaldotnet\\mvs new\\ado example\\ado example\\data\\departmant_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|solutionrelative:ado example\\data\\departmant_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ado example\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|solutionrelative:ado example\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ado example\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|solutionrelative:ado example\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ado example\\filters\\customauthorizrattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|solutionrelative:ado example\\filters\\customauthorizrattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ado example\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|solutionrelative:ado example\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ado example\\filters\\globalexceptionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|solutionrelative:ado example\\filters\\globalexceptionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ado example\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|solutionrelative:ado example\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ado example\\scripts\\customjs\\department.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|solutionrelative:ado example\\scripts\\customjs\\department.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ado example\\scripts\\customjs\\category.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{47128E91-A300-4557-AF5E-628023047656}|ADO Example\\ADO Example.csproj|solutionrelative:ado example\\scripts\\customjs\\category.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Departmant_Data.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Data\\Departmant_Data.cs",
+              "RelativeDocumentMoniker": "ADO Example\\Data\\Departmant_Data.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Data\\Departmant_Data.cs",
+              "RelativeToolTip": "ADO Example\\Data\\Departmant_Data.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAYwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T15:45:43.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ADO Example\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ADO Example\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T15:45:40.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FilterConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\App_Start\\FilterConfig.cs",
+              "RelativeDocumentMoniker": "ADO Example\\App_Start\\FilterConfig.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\App_Start\\FilterConfig.cs",
+              "RelativeToolTip": "ADO Example\\App_Start\\FilterConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T08:10:29.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomAuthorizrAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Filters\\CustomAuthorizrAttribute.cs",
+              "RelativeDocumentMoniker": "ADO Example\\Filters\\CustomAuthorizrAttribute.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Filters\\CustomAuthorizrAttribute.cs",
+              "RelativeToolTip": "ADO Example\\Filters\\CustomAuthorizrAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T08:10:23.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "ADO Example\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "ADO Example\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAADwvw8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T10:00:21.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GlobalExceptionFilter.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Filters\\GlobalExceptionFilter.cs",
+              "RelativeDocumentMoniker": "ADO Example\\Filters\\GlobalExceptionFilter.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Filters\\GlobalExceptionFilter.cs",
+              "RelativeToolTip": "ADO Example\\Filters\\GlobalExceptionFilter.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAiwBwAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T10:00:08.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "ADO Example\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "ADO Example\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T09:59:37.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "category.js",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Scripts\\CustomJS\\category.js",
+              "RelativeDocumentMoniker": "ADO Example\\Scripts\\CustomJS\\category.js",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Scripts\\CustomJS\\category.js",
+              "RelativeToolTip": "ADO Example\\Scripts\\CustomJS\\category.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-09T09:57:06.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "department.js",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Scripts\\CustomJS\\department.js",
+              "RelativeDocumentMoniker": "ADO Example\\Scripts\\CustomJS\\department.js",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\finaldotnet\\mvs new\\ADO Example\\ADO Example\\Scripts\\CustomJS\\department.js",
+              "RelativeToolTip": "ADO Example\\Scripts\\CustomJS\\department.js",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-09T09:56:04.921Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

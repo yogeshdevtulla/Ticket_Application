@@ -1,0 +1,84 @@
+﻿@model ADO_Example.Models.RoleMaster
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add New Role</h2>
+<div class="add-role-form">
+    <form id="addRoleForm" method="post">
+        <div class="form-container">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="rollname">Role Name</label>
+                    <input type="text" id="rolename" name="RoleName" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <div>
+                        <label><input type="radio" name="Status" value="Active" checked /> Active</label>
+                        <label><input type="radio" name="Status" value="Inactive" /> Inactive</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-warning">Reset</button>
+                <a href="@Url.Action("Index", "RoleMaster")" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .add-role-form {
+        max-width: 800px;
+        height: 70vh;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+    .form-control {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        margin: 5px;
+        margin-top: 20px;
+    }
+</style>
